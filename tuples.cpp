@@ -32,4 +32,10 @@ TEST_SUITE("Tuples") {
 		auto v = create_vector(4, -4, 3);
 		CHECK_EQ(v, create_tuple(4, -4, 3, 0));
 	}
+
+	TEST_CASE("Adding two tuples") {
+		auto a1 = create_tuple(3, -2, 5, 1);
+		auto a2 = create_tuple(-2, 3, 1, 0);
+		CHECK_EQ(a1 + a2, create_tuple(1, 1, 6, 1));
+	}
 }

@@ -5,7 +5,11 @@ struct tuple {
 };
 
 inline tuple create_tuple(real x, real y, real z, real w) {
-	tuple result = { x,y,z,w };
+	tuple result = { 
+		.x =x,
+		.y =y,
+		.z =z,
+		.w =w };
 	return result;
 }
 
@@ -22,4 +26,14 @@ inline bool is_vector(tuple v) { return v.w == 0.0; }
 
 inline bool operator==(tuple const& l, tuple const& r) {
 	return (l.x == r.x) && (l.y == r.y) && (l.z == r.z) && (l.w == r.w);
+}
+
+inline tuple operator+(tuple const& l, tuple const& r) {
+	tuple result = { 
+		.x =l.x + r.x,
+		.y =l.y + r.y,
+		.z =l.z + r.z,
+		.w =l.w + r.w 
+	};
+	return result;
 }
