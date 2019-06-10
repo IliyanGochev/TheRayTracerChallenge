@@ -38,4 +38,22 @@ TEST_SUITE("Tuples") {
 		auto a2 = create_tuple(-2, 3, 1, 0);
 		CHECK_EQ(a1 + a2, create_tuple(1, 1, 6, 1));
 	}
+
+	TEST_CASE("Subtracting two points") {
+		auto p1 = create_point(3, 2, 1);
+		auto p2 = create_point(5, 6, 7);
+		CHECK_EQ(p1 - p2, create_vector(-2, -4, -6));
+	}
+
+	TEST_CASE("Subtracting vector from a point") {
+		auto p = create_point(3, 2, 1);
+		auto v = create_vector(5, 6, 7);
+		CHECK_EQ(p - v, create_point(-2, -4, -6));
+	}
+
+	TEST_CASE("Subtracting two vectors") {
+		auto v1 = create_vector(3, 2, 1);
+		auto v2 = create_vector(5, 6, 7);
+		CHECK_EQ(v1 - v2, create_vector(-2, -4, -6));
+	}
 }

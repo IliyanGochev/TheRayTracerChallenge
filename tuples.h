@@ -37,3 +37,13 @@ inline tuple operator+(tuple const& l, tuple const& r) {
 	};
 	return result;
 }
+
+inline tuple operator-(tuple const& l, tuple const& r) {
+	tuple result = {
+		.x = l.x - r.x,
+		.y = l.y - r.y,
+		.z = l.z - r.z,
+		.w = l.w - r.w
+	};
+	return result;
+}
