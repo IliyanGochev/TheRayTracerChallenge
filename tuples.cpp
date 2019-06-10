@@ -1,5 +1,5 @@
 #include "TheRayTracerChallenge.h"
-#include "tuple.h"
+#include "tuples.h"
 
 
 TEST_SUITE("Tuples") {
