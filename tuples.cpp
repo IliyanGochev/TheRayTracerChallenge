@@ -62,4 +62,14 @@ TEST_SUITE("Tuples") {
 		CHECK_EQ(-a, Tuple(-1, 2, -3, 4));
 	}
 
+	TEST_CASE("Multiplying a tuple by a scalar") {
+		auto a = Tuple(1, -2, 3, -4);
+		CHECK_EQ(a * 3.5, Tuple(3.5, -7, 10.5, -14));
+	}
+
+	TEST_CASE("Multiplying a tuple by a fraction") {
+		auto a = Tuple(1, -2, 3, -4);
+		CHECK_EQ(a * 0.5, Tuple(0.5, -1, 1.5, -2));
+	}
+
 }
