@@ -56,4 +56,9 @@ TEST_SUITE("Tuples") {
 		auto v2 = create_vector(5, 6, 7);
 		CHECK_EQ(v1 - v2, create_vector(-2, -4, -6));
 	}
+
+	TEST_CASE("Negating a tuple") {
+		auto a = create_tuple(1, -2, 3, -4);
+		CHECK_EQ(-a, create_tuple(-1, 2, -3, 4));
+	}
 }

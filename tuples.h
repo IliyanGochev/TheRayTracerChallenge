@@ -47,3 +47,12 @@ inline tuple operator-(tuple const& l, tuple const& r) {
 	};
 	return result;
 }
+inline tuple operator-(tuple const& l) {
+	tuple result = {
+		.x = -l.x,
+		.y = -l.y,
+		.z = -l.z,
+		.w = -l.w,
+	};
+	return result;
+}
