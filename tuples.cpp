@@ -77,4 +77,48 @@ TEST_SUITE("Tuples") {
 		CHECK_EQ(a / 2, Tuple(0.5, -1, 1.5, -2));
 	}
 
+	TEST_SUITE("Magnitudes"){
+		TEST_CASE("Computing the magnitude of vector(1, 0, 0)") {
+			auto v = vector(1, 0, 0);
+			CHECK_EQ(magnitude(v), 1);
+		}
+
+		TEST_CASE("Computing the magnitude of vector(0, 1, 0)") {
+			auto v = vector(0, 1, 0);
+			CHECK_EQ(magnitude(v), 1);
+		}
+
+		TEST_CASE("Computing the magnitude of vector(0, 0, 1)") {
+			auto v = vector(0, 0, 1);
+			CHECK_EQ(magnitude(v), 1);
+		}
+
+		TEST_CASE("Computing the magnitude of vector(1, 2, 3)") {
+			auto v = vector(1, 2, 3);
+			CHECK_EQ(magnitude(v), doctest::Approx(std::sqrt(14)));
+		}
+
+		TEST_CASE("Computing the magnitude of vector(-1, -2, -3)") {
+			auto v = vector(-1, -2, -3);
+			CHECK_EQ(magnitude(v), doctest::Approx(std::sqrt(14)));
+		}
+	}
+
+	TEST_CASE("Normalizing vector(4,0,0) gives (1,0,0)") {
+		auto v = vector(4, 0, 0);
+		CHECK_EQ(normalize(v), vector(1, 0, 0));
+	}
+
+	TEST_CASE("Normalizing vector(1,2,3)") {
+		auto v = vector(1, 2, 3);
+		auto sqrt14 = std::sqrt(14);
+		CHECK_EQ(normalize(v), vector(1/sqrt14, 2/sqrt14, 3/sqrt14));
+	}
+
+	 TEST_CASE("Magnitude of a normalized vector") {
+		 auto v = vector(1, 2, 3);
+		 auto norm = normalize(v);
+
+		 CHECK_EQ(doctest::Approx(magnitude(norm)), 1.0);
+	}
 }
