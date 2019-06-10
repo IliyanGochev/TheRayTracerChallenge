@@ -121,4 +121,17 @@ TEST_SUITE("Tuples") {
 
 		 CHECK_EQ(doctest::Approx(magnitude(norm)), 1.0);
 	}
+
+	TEST_CASE("The dot product of two tuples") {
+		auto a = vector(1, 2, 3);
+		auto b = vector(2, 3, 4);
+		CHECK_EQ(doctest::Approx( dot(a, b)), 20);
+	}
+
+	TEST_CASE("The cross product of two vectors") {
+		auto a = vector(1, 2, 3);
+		auto b = vector(2, 3, 4);
+		CHECK_EQ(cross(a, b), vector(-1,  2, -1));
+		CHECK_EQ(cross(b, a), vector( 1, -2,  1));
+	}
 }
