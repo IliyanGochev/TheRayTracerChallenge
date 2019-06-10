@@ -27,4 +27,9 @@ TEST_SUITE("Tuples") {
 		auto p = create_point(4, -4, 3);
 		CHECK_EQ(p, create_tuple(4, -4, 3, 1));
 	}
+
+	TEST_CASE("create_vector() creates a tuple with w=0.0") {
+		auto v = create_vector(4, -4, 3);
+		CHECK_EQ(v, create_tuple(4, -4, 3, 0));
+	}
 }
