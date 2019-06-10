@@ -72,4 +72,9 @@ TEST_SUITE("Tuples") {
 		CHECK_EQ(a * 0.5, Tuple(0.5, -1, 1.5, -2));
 	}
 
+	TEST_CASE("Dividing a tuple by a scalar") {
+		auto a = Tuple(1, -2, 3, -4);
+		CHECK_EQ(a / 2, Tuple(0.5, -1, 1.5, -2));
+	}
+
 }

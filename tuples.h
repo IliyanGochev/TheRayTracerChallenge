@@ -66,3 +66,13 @@ inline tuple operator*(tuple const& t, real const& s) {
 	};
 	return result;
 }
+
+inline tuple operator/(tuple const& t, real const& s) {
+	tuple result = {
+		.x = t.x / s,
+		.y = t.y / s,
+		.z = t.z / s,
+		.w = t.w / s,
+	};
+	return result;
+}
