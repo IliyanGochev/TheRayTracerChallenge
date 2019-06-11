@@ -12,6 +12,6 @@ if (MSVC_VERSION GREATER_EQUAL "1900")
 endif()
 
 # Add source to this project's executable.
-add_executable (TheRayTracerChallenge "TheRayTracerChallenge.cpp" "TheRayTracerChallenge.h" "tuples.cpp")
+add_executable (TheRayTracerChallenge "TheRayTracerChallenge.cpp" "TheRayTracerChallenge.h" "tuples.cpp" "colors.cpp")
 
 # TODO: Add tests and install targets if needed.
