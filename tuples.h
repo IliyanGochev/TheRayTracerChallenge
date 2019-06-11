@@ -22,8 +22,8 @@ inline tuple vector(real x, real y, real z) {
 	return Tuple(x, y, z, 0.0);
 }
 
-inline bool is_point(tuple p) { return p.w == 1.0; }
-inline bool is_vector(tuple v) { return v.w == 0.0; }
+inline bool is_point(tuple const& p) { return p.w == 1.0; }
+inline bool is_vector(tuple const& v) { return v.w == 0.0; }
 
 inline bool operator==(tuple const& l, tuple const& r) {
 	return eps_equal(l.x, r.x) && eps_equal(l.y, r.y) && eps_equal(l.z, r.z) && eps_equal(l.w, r.w);
@@ -78,7 +78,7 @@ inline tuple operator/(tuple const& t, real const& s) {
 	return result;
 }
 
-inline real magnitude(tuple t) {
+inline real magnitude(tuple const& t) {
 	return std::sqrt(t.x * t.x + t.y * t.y + t.z * t.z + t.w * t.w);
 }
 
